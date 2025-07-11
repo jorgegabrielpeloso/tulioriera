@@ -1,0 +1,290 @@
+
+/* === TARJETAS CATEGORÍAS MODERNAS === */
+.promoSwiper {
+  padding: 20px 0;
+}
+.swiper-slide {
+  width: auto;
+  text-align: center;
+}
+
+/* === BOTÓN WHATSAPP === */
+.btn-whatsapp {
+  background-color: #25D366;
+  color: #fff;
+  border: 2px solid white;
+  border-radius: 30px;
+  padding: 5px 15px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+.btn-whatsapp:hover {
+  background-color: #1ebe5d;
+  text-decoration: none;
+  color: #fff;
+}
+
+/* === SLIDER PRINCIPAL === */
+.carousel-wrapper {
+  width: auto;
+}
+.carousel-item img {
+  object-fit: cover;
+  height: auto;
+  max-height: 480px;
+}
+@media (min-width: 768px) {
+  .carousel-wrapper {
+    margin-left: calc(-1 * ((100vw - 100%) / 2));
+    margin-right: calc(-1 * ((100vw - 100%) / 2));
+    max-width: 100vw;
+  }
+}
+
+/* === DESTACADOS === */
+.producto-card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: white;
+  transition: box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  height: 100%;
+}
+.producto-card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+.producto-img img {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+}
+.no-img {
+  width: 100%;
+  height: 150px;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+}
+.producto-info {
+  text-align: center;
+  margin-top: 10px;
+}
+.producto-info h6 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.producto-info .precio {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #000b90;
+}
+
+/* === TARJETAS INSTITUCIONALES VITAL CON CURVAS ROJAS === */
+.card-vital {
+  background: #00327d;
+  color: white;
+  height: 140px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.card-vital .icono {
+  background: white;
+  border-radius: 50%;
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00327d;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+.card-vital p {
+  font-size: 0.9rem;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Card A */
+.card-vital-a {
+  border-radius: 16px 0 0 0;
+}
+.card-vital-a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  background: #ed1c24;
+  border-radius: 0 0 100% 0;
+}
+.card-vital-a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  background: #ed1c24;
+  border-radius: 100% 0 0 0;
+}
+
+/* Card B */
+.card-vital-b {
+  border-radius: 0 16px 0 0;
+}
+.card-vital-b::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background: #ed1c24;
+  border-radius: 0 0 0 100%;
+}
+.card-vital-b::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 80px;
+  background: #ed1c24;
+  border-radius: 0 100% 0 0;
+}
+
+/* Card C */
+.card-vital-c {
+  border-radius: 0 0 0 16px;
+}
+.card-vital-c::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  background: #ed1c24;
+  border-radius: 0 0 100% 0;
+}
+.card-vital-c::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  background: #ed1c24;
+  border-radius: 100% 0 0 0;
+}
+
+/* Card D */
+.card-vital-d {
+  border-radius: 0 0 16px 0;
+}
+.card-vital-d::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background: #ed1c24;
+  border-radius: 0 0 0 100%;
+}
+.card-vital-d::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 80px;
+  background: #ed1c24;
+  border-radius: 0 100% 0 0;
+}
+.btn-chatbot {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  background-color: #000; /* negro estilo Vital */
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  z-index: 1000;
+  font-size: 22px;
+  transition: transform 0.2s ease;
+}
+.btn-chatbot:hover {
+  transform: scale(1.1);
+  text-decoration: none;
+}
+
+/*Productos*/
+.card-producto {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 10px;
+  height: 100%;
+  transition: transform 0.2s ease;
+  text-align: center;
+  background-color: white;
+}
+
+.card-producto:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.card-producto img {
+  width: 100%;
+  height: 180px; /* Altura fija */
+  object-fit: contain; /* Escala manteniendo proporciones */
+  margin-bottom: 10px;
+}
+
+.card-producto .badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.card-producto h6 {
+  font-size: 0.95rem;
+  margin: 6px 0;
+}
+
+.card-producto .precio {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #000b90;
+}
