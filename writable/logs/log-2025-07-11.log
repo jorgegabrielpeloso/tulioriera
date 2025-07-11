@@ -3,3 +3,318 @@ DEBUG - 2025-07-11 13:44:56 --> Session: Class initialized using 'CodeIgniter\Se
 DEBUG - 2025-07-11 13:44:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-07-11 13:46:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-07-11 13:46:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-11 13:53:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-11 13:57:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-11 13:57:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-11 13:57:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-11 13:57:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-11 15:35:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-11 15:36:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-11 15:36:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-11 15:36:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-11 15:37:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-11 15:37:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-11 15:38:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-11 15:38:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-11 15:41:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-11 17:48:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-11 17:48:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-11 17:48:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-11 17:49:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-11 17:49:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-11 18:00:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-11 18:01:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-11 18:01:29 --> ErrorException: Undefined array key "usuario_nombre"
+[Method: GET, Route: jefe/vencimientos]
+in APPPATH\Views\back\jefe\vencimientos_jefe.php on line 38.
+ 1 APPPATH\Views\back\jefe\vencimientos_jefe.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario_nombre"', 'C:\\xampp\\htdocs\\tulioriera\\app\\Views\\back\\jefe\\vencimientos_jefe.php', 38)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\tulioriera\\app\\Views\\back\\jefe\\vencimientos_jefe.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('back/jefe/vencimientos_jefe', [], true)
+ 5 APPPATH\Controllers\VencimientosController.php(69): view('back/jefe/vencimientos_jefe', [...])
+ 6 APPPATH\Controllers\VencimientosController.php(52): App\Controllers\VencimientosController->vencimientosPorDias(9999)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\VencimientosController->verParaJefe()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VencimientosController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-07-11 19:38:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-11 19:39:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-11 19:39:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-11 19:40:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-11 19:40:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-11 19:40:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-11 19:40:45 --> ErrorException: Undefined array key "usuario_nombre"
+[Method: GET, Route: jefe/vencimientos]
+in APPPATH\Views\back\jefe\vencimientos_jefe.php on line 38.
+ 1 APPPATH\Views\back\jefe\vencimientos_jefe.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario_nombre"', 'C:\\xampp\\htdocs\\tulioriera\\app\\Views\\back\\jefe\\vencimientos_jefe.php', 38)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\tulioriera\\app\\Views\\back\\jefe\\vencimientos_jefe.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('back/jefe/vencimientos_jefe', [], true)
+ 5 APPPATH\Controllers\VencimientosController.php(69): view('back/jefe/vencimientos_jefe', [...])
+ 6 APPPATH\Controllers\VencimientosController.php(52): App\Controllers\VencimientosController->vencimientosPorDias(9999)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\VencimientosController->verParaJefe()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VencimientosController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-07-11 19:45:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-11 19:45:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-11 19:57:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-11 19:58:23 --> ErrorException: Undefined array key "usuario_nombre"
+[Method: GET, Route: jefe/vencimientos]
+in APPPATH\Views\back\jefe\vencimientos_jefe.php on line 39.
+ 1 APPPATH\Views\back\jefe\vencimientos_jefe.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario_nombre"', 'C:\\xampp\\htdocs\\tulioriera\\app\\Views\\back\\jefe\\vencimientos_jefe.php', 39)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\tulioriera\\app\\Views\\back\\jefe\\vencimientos_jefe.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('back/jefe/vencimientos_jefe', [], true)
+ 5 APPPATH\Controllers\VencimientosController.php(69): view('back/jefe/vencimientos_jefe', [...])
+ 6 APPPATH\Controllers\VencimientosController.php(52): App\Controllers\VencimientosController->vencimientosPorDias(9999)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\VencimientosController->verParaJefe()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VencimientosController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-11 20:04:08 --> ErrorException: Undefined array key "usuario_nombre"
+[Method: GET, Route: jefe/vencimientos]
+in APPPATH\Views\back\jefe\vencimientos_jefe.php on line 39.
+ 1 APPPATH\Views\back\jefe\vencimientos_jefe.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario_nombre"', 'C:\\xampp\\htdocs\\tulioriera\\app\\Views\\back\\jefe\\vencimientos_jefe.php', 39)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\tulioriera\\app\\Views\\back\\jefe\\vencimientos_jefe.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('back/jefe/vencimientos_jefe', [], true)
+ 5 APPPATH\Controllers\VencimientosController.php(69): view('back/jefe/vencimientos_jefe', [...])
+ 6 APPPATH\Controllers\VencimientosController.php(52): App\Controllers\VencimientosController->vencimientosPorDias(9999)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\VencimientosController->verParaJefe()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VencimientosController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-07-11 20:04:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-11 20:04:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-11 20:04:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-11 20:04:28 --> ErrorException: Undefined array key "usuario_nombre"
+[Method: GET, Route: jefe/vencimientos]
+in APPPATH\Views\back\jefe\vencimientos_jefe.php on line 39.
+ 1 APPPATH\Views\back\jefe\vencimientos_jefe.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario_nombre"', 'C:\\xampp\\htdocs\\tulioriera\\app\\Views\\back\\jefe\\vencimientos_jefe.php', 39)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\tulioriera\\app\\Views\\back\\jefe\\vencimientos_jefe.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('back/jefe/vencimientos_jefe', [], true)
+ 5 APPPATH\Controllers\VencimientosController.php(69): view('back/jefe/vencimientos_jefe', [...])
+ 6 APPPATH\Controllers\VencimientosController.php(52): App\Controllers\VencimientosController->vencimientosPorDias(9999)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\VencimientosController->verParaJefe()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VencimientosController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-11 20:06:03 --> ErrorException: Undefined array key "usuario_nombre"
+[Method: GET, Route: jefe/vencimientos]
+in APPPATH\Views\back\jefe\vencimientos_jefe.php on line 39.
+ 1 APPPATH\Views\back\jefe\vencimientos_jefe.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario_nombre"', 'C:\\xampp\\htdocs\\tulioriera\\app\\Views\\back\\jefe\\vencimientos_jefe.php', 39)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\tulioriera\\app\\Views\\back\\jefe\\vencimientos_jefe.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('back/jefe/vencimientos_jefe', [], true)
+ 5 APPPATH\Controllers\VencimientosController.php(69): view('back/jefe/vencimientos_jefe', [...])
+ 6 APPPATH\Controllers\VencimientosController.php(52): App\Controllers\VencimientosController->vencimientosPorDias(9999)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\VencimientosController->verParaJefe()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VencimientosController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-07-11 20:06:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-11 20:06:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-11 20:06:10 --> ErrorException: Undefined array key "usuario_nombre"
+[Method: GET, Route: jefe/vencimientos]
+in APPPATH\Views\back\jefe\vencimientos_jefe.php on line 39.
+ 1 APPPATH\Views\back\jefe\vencimientos_jefe.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario_nombre"', 'C:\\xampp\\htdocs\\tulioriera\\app\\Views\\back\\jefe\\vencimientos_jefe.php', 39)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\tulioriera\\app\\Views\\back\\jefe\\vencimientos_jefe.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('back/jefe/vencimientos_jefe', [], true)
+ 5 APPPATH\Controllers\VencimientosController.php(69): view('back/jefe/vencimientos_jefe', [...])
+ 6 APPPATH\Controllers\VencimientosController.php(52): App\Controllers\VencimientosController->vencimientosPorDias(9999)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\VencimientosController->verParaJefe()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VencimientosController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-11 20:10:36 --> ErrorException: Undefined array key "usuario_nombre"
+[Method: GET, Route: jefe/vencimientos]
+in APPPATH\Views\back\jefe\vencimientos_jefe.php on line 39.
+ 1 APPPATH\Views\back\jefe\vencimientos_jefe.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario_nombre"', 'C:\\xampp\\htdocs\\tulioriera\\app\\Views\\back\\jefe\\vencimientos_jefe.php', 39)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\tulioriera\\app\\Views\\back\\jefe\\vencimientos_jefe.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('back/jefe/vencimientos_jefe', [], true)
+ 5 APPPATH\Controllers\VencimientosController.php(69): view('back/jefe/vencimientos_jefe', [...])
+ 6 APPPATH\Controllers\VencimientosController.php(52): App\Controllers\VencimientosController->vencimientosPorDias(9999)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\VencimientosController->verParaJefe()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VencimientosController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-07-11 20:10:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-11 20:10:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-11 20:10:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-11 20:10:53 --> ErrorException: Undefined array key "usuario_nombre"
+[Method: GET, Route: jefe/vencimientos]
+in APPPATH\Views\back\jefe\vencimientos_jefe.php on line 39.
+ 1 APPPATH\Views\back\jefe\vencimientos_jefe.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario_nombre"', 'C:\\xampp\\htdocs\\tulioriera\\app\\Views\\back\\jefe\\vencimientos_jefe.php', 39)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\tulioriera\\app\\Views\\back\\jefe\\vencimientos_jefe.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('back/jefe/vencimientos_jefe', [], true)
+ 5 APPPATH\Controllers\VencimientosController.php(69): view('back/jefe/vencimientos_jefe', [...])
+ 6 APPPATH\Controllers\VencimientosController.php(52): App\Controllers\VencimientosController->vencimientosPorDias(9999)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\VencimientosController->verParaJefe()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VencimientosController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-11 20:22:42 --> ErrorException: Undefined array key "usuario_nombre"
+[Method: GET, Route: jefe/vencimientos]
+in APPPATH\Views\back\jefe\vencimientos_jefe.php on line 39.
+ 1 APPPATH\Views\back\jefe\vencimientos_jefe.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario_nombre"', 'C:\\xampp\\htdocs\\tulioriera\\app\\Views\\back\\jefe\\vencimientos_jefe.php', 39)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\tulioriera\\app\\Views\\back\\jefe\\vencimientos_jefe.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('back/jefe/vencimientos_jefe', [], true)
+ 5 APPPATH\Controllers\VencimientosController.php(69): view('back/jefe/vencimientos_jefe', [...])
+ 6 APPPATH\Controllers\VencimientosController.php(52): App\Controllers\VencimientosController->vencimientosPorDias(9999)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\VencimientosController->verParaJefe()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VencimientosController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-11 20:23:19 --> ErrorException: Undefined array key "usuario_nombre"
+[Method: GET, Route: jefe/vencimientos]
+in APPPATH\Views\back\jefe\vencimientos_jefe.php on line 39.
+ 1 APPPATH\Views\back\jefe\vencimientos_jefe.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario_nombre"', 'C:\\xampp\\htdocs\\tulioriera\\app\\Views\\back\\jefe\\vencimientos_jefe.php', 39)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\tulioriera\\app\\Views\\back\\jefe\\vencimientos_jefe.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('back/jefe/vencimientos_jefe', [], true)
+ 5 APPPATH\Controllers\VencimientosController.php(69): view('back/jefe/vencimientos_jefe', [...])
+ 6 APPPATH\Controllers\VencimientosController.php(52): App\Controllers\VencimientosController->vencimientosPorDias(9999)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\VencimientosController->verParaJefe()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VencimientosController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-11 20:32:37 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "back/layout_view.php"
+[Method: GET, Route: jefe/vencimientos]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('back/layout_view.php')
+ 2 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('back/layout_view', [], true)
+ 3 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('back/jefe/vencimientos_jefe', [], true)
+ 4 APPPATH\Controllers\VencimientosController.php(71): view('back/jefe/vencimientos_jefe', [...])
+ 5 APPPATH\Controllers\VencimientosController.php(53): App\Controllers\VencimientosController->vencimientosPorDias(9999)
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\VencimientosController->verParaJefe()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VencimientosController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-11 20:35:32 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "back/layout_view.php"
+[Method: GET, Route: jefe/vencimientos]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('back/layout_view.php')
+ 2 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('back/layout_view', [], true)
+ 3 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('back/jefe/vencimientos_jefe', [], true)
+ 4 APPPATH\Controllers\VencimientosController.php(71): view('back/jefe/vencimientos_jefe', [...])
+ 5 APPPATH\Controllers\VencimientosController.php(53): App\Controllers\VencimientosController->vencimientosPorDias(9999)
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\VencimientosController->verParaJefe()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VencimientosController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-11 20:36:54 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "back/jefe/layout_view.php"
+[Method: GET, Route: jefe/vencimientos]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('back/jefe/layout_view.php')
+ 2 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('back/jefe/layout_view', [], true)
+ 3 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('back/jefe/vencimientos_jefe', [], true)
+ 4 APPPATH\Controllers\VencimientosController.php(71): view('back/jefe/vencimientos_jefe', [...])
+ 5 APPPATH\Controllers\VencimientosController.php(53): App\Controllers\VencimientosController->vencimientosPorDias(9999)
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\VencimientosController->verParaJefe()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VencimientosController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-11 20:37:16 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "back/jefe/layout_view.php"
+[Method: GET, Route: jefe/vencimientos]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('back/jefe/layout_view.php')
+ 2 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('back/jefe/layout_view', [], true)
+ 3 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('back/jefe/vencimientos_jefe', [], true)
+ 4 APPPATH\Controllers\VencimientosController.php(71): view('back/jefe/vencimientos_jefe', [...])
+ 5 APPPATH\Controllers\VencimientosController.php(53): App\Controllers\VencimientosController->vencimientosPorDias(9999)
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\VencimientosController->verParaJefe()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VencimientosController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-11 20:38:46 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "back/jefe_layout.php"
+[Method: GET, Route: jefe/vencimientos]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('back/jefe_layout.php')
+ 2 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('back/jefe_layout', [], true)
+ 3 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('back/jefe/vencimientos_jefe', [], true)
+ 4 APPPATH\Controllers\VencimientosController.php(71): view('back/jefe/vencimientos_jefe', [...])
+ 5 APPPATH\Controllers\VencimientosController.php(53): App\Controllers\VencimientosController->vencimientosPorDias(9999)
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\VencimientosController->verParaJefe()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VencimientosController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-11 20:38:49 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "back/jefe_layout.php"
+[Method: GET, Route: jefe/vencimientos]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('back/jefe_layout.php')
+ 2 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('back/jefe_layout', [], true)
+ 3 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('back/jefe/vencimientos_jefe', [], true)
+ 4 APPPATH\Controllers\VencimientosController.php(71): view('back/jefe/vencimientos_jefe', [...])
+ 5 APPPATH\Controllers\VencimientosController.php(53): App\Controllers\VencimientosController->vencimientosPorDias(9999)
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\VencimientosController->verParaJefe()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VencimientosController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-11 20:39:17 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "back/jefe_layout.php"
+[Method: GET, Route: jefe/vencimientos]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('back/jefe_layout.php')
+ 2 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('back/jefe_layout', [], true)
+ 3 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('back/jefe/vencimientos_jefe', [], true)
+ 4 APPPATH\Controllers\VencimientosController.php(71): view('back/jefe/vencimientos_jefe', [...])
+ 5 APPPATH\Controllers\VencimientosController.php(53): App\Controllers\VencimientosController->vencimientosPorDias(9999)
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\VencimientosController->verParaJefe()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VencimientosController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-11 20:39:23 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "back/jefe_layout.php"
+[Method: GET, Route: jefe/vencimientos]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('back/jefe_layout.php')
+ 2 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('back/jefe_layout', [], true)
+ 3 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('back/jefe/vencimientos_jefe', [], true)
+ 4 APPPATH\Controllers\VencimientosController.php(71): view('back/jefe/vencimientos_jefe', [...])
+ 5 APPPATH\Controllers\VencimientosController.php(53): App\Controllers\VencimientosController->vencimientosPorDias(9999)
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\VencimientosController->verParaJefe()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VencimientosController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

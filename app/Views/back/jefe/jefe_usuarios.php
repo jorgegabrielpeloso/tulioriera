@@ -1,67 +1,54 @@
-<?= view('back/jefe/jefe_layout') ?>
+<?= $this->extend('back/jefe/jefe_layout') ?>
+<?= $this->section('contenido') ?>
 
-<div class="container mt-4">
-  <h2 class="mb-4">Gestión de Usuarios de Pasillo</h2>
-
-  <div class="text-end mb-3">
-    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalUsuario">Crear Usuario de Pasillo</button>
-  </div>
-
-  <table class="table table-bordered table-hover">
-    <thead class="table-dark">
-      <tr>
-        <th>Nombre</th>
-        <th>Email</th>
-        <th>Pasillo</th>
-        <th>Acciones</th>
-      </tr>
-    </thead>
-    <tbody>
-      <?php foreach ($usuarios as $u): ?>
-        <tr>
-          <td><?= esc($u['nombre']) ?></td>
-          <td><?= esc($u['email']) ?></td>
-          <td><?= esc($u['pasillo_asignado'] ?? '-') ?></td>
-          <td>
-            <a href="<?= base_url('usuarios/eliminar/' . $u['id']) ?>" class="btn btn-danger btn-sm" onclick="return confirm('¿Eliminar?')">🗑️</a>
-          </td>
-        </tr>
-      <?php endforeach ?>
-    </tbody>
-  </table>
+<!-- Título -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+  <h1 class="h3 mb-0 text-gray-800"><i class="fas fa-users"></i> Usuarios Creados</h1>
 </div>
 
-<!-- Modal -->
-<div class="modal fade" id="modalUsuario" tabindex="-1" aria-labelledby="modalUsuarioLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <form action="<?= base_url('usuarios/guardar') ?>" method="post" class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Nuevo Usuario de Pasillo</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+<!-- Tabla de usuarios -->
+<div class="card shadow mb-4">
+  <div class="card-header py-3">
+    <h6 class="m-0 font-weight-bold text-primary">Listado de usuarios creados por el Jefe</h6>
+  </div>
+  <div class="card-body">
+    <?php if (!empty($usuarios)): ?>
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover" width="100%">
+          <thead class="thead-light">
+            <tr>
+              <th>Nombre</th>
+              <th>Email</th>
+              <th>Rol</th>
+              <th>Pasillo asignado</th>
+              <th>Estado</th>
+              <th>Fecha de creación</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php foreach ($usuarios as $usuario): ?>
+              <tr>
+                <td><?= esc($usuario['nombre']) ?></td>
+                <td><?= esc($usuario['email']) ?></td>
+                <td><?= esc($usuario['rol']) ?></td>
+                <td><?= esc($usuario['pasillo'] ?? '—') ?></td>
+                <td>
+                  <?php if ($usuario['baja'] === 'NO'): ?>
+                    <span class="badge badge-success">Activo</span>
+                  <?php else: ?>
+                    <span class="badge badge-danger">Baja</span>
+                  <?php endif; ?>
+                </td>
+                <td><?= date('d/m/Y H:i', strtotime($usuario['created_at'])) ?></td>
+              </tr>
+            <?php endforeach; ?>
+          </tbody>
+        </table>
       </div>
-      <div class="modal-body">
-        <input type="hidden" name="rol" value="pasillo">
-
-        <div class="mb-2">
-          <label>Nombre</label>
-          <input type="text" name="nombre" class="form-control" required>
-        </div>
-        <div class="mb-2">
-          <label>Email</label>
-          <input type="email" name="email" class="form-control" required>
-        </div>
-        <div class="mb-2">
-          <label>Contraseña</label>
-          <input type="password" name="password" class="form-control" required>
-        </div>
-        <div class="mb-2">
-          <label>Pasillo asignado</label>
-          <input type="number" name="pasillo_asignado" class="form-control" min="1" required>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="submit" class="btn btn-primary">Guardar Usuario</button>
-      </div>
-    </form>
+    <?php else: ?>
+      <p class="text-center">No hay usuarios cargados aún.</p>
+    <?php endif; ?>
   </div>
 </div>
+
+<?= $this->endSection() ?>

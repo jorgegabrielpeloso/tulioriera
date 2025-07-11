@@ -47,12 +47,14 @@ class VencimientosController extends Controller
         return redirect()->back()->with('mensaje', 'Vencimiento registrado correctamente.');
     }
 
-    public function verParaJefe()
-    {
-        return $this->vencimientosPorDias(9999); // sin límite inicial
-    }
+    // Este es el que se carga por defecto con todos
+public function verParaJefe()
+{
+    return $this->vencimientosPorDias(9999); // por defecto muestra todos
+}
 
-    public function vencimientosPorDias($dias)
+// Este responde al filtro con cantidad de días
+public function vencimientosPorDias($dias)
 {
     $fechaLimite = date('Y-m-d', strtotime("+$dias days"));
 
@@ -71,6 +73,8 @@ class VencimientosController extends Controller
         'filtroActivo' => $dias
     ]);
 }
+
+
 
 
     public function exportarPdf()

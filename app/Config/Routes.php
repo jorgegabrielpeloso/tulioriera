@@ -74,3 +74,5 @@ $routes->get('jefe/exportar-pdf', 'VencimientosController::exportarPdf');
 
 $routes->get('jefe/exportar-pdf', 'VencimientosController::exportarPdf');
 $routes->get('jefe/vencimientos-por-dias/(:num)', 'VencimientosController::vencimientosPorDias/$1');
+$routes->get('jefe/vencimientos/(:num)', 'VencimientosController::vencimientosPorDias/$1');
+$routes->get('jefe/exportarPdf', 'VencimientosController::exportarPdf');

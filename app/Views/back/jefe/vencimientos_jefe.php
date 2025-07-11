@@ -1,58 +1,59 @@
+
 <?= $this->extend('back/jefe/jefe_layout') ?>
 <?= $this->section('contenido') ?>
 
-<h2 class="mb-4">Listado de vencimientos registrados</h2>
+<div class="container-fluid">
 
-<!-- Filtro y botón PDF -->
-<div class="d-flex mb-3 align-items-center gap-2">
-    <select id="filtro_dias" class="form-select" style="max-width: 250px;">
-        <option disabled selected>Filtrar próximos vencimientos...</option>
-        <?php foreach ([5, 15, 30, 45, 60] as $d): ?>
-            <option value="<?= $d ?>" <?= (isset($filtroActivo) && $filtroActivo == $d) ? 'selected' : '' ?>>
-                Próximos <?= $d ?> días
-            </option>
-        <?php endforeach; ?>
-    </select>
+    <h1 class="h3 mb-4 text-gray-800 text-center">Listado de vencimientos registrados</h1>
 
-    <form action="<?= base_url('jefe/exportar-pdf') ?>" method="get" target="_blank" class="mb-0">
-        <input type="hidden" name="filtro_dias" id="filtro_dias_hidden" value="<?= esc($filtroActivo ?? '') ?>">
-        <button type="submit" class="btn btn-danger">Exportar PDF</button>
-    </form>
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <div>
+            <select id="filtroDias" class="form-control form-control-sm w-auto">
+                <option value="9999" <?= $filtroActivo == 9999 ? 'selected' : '' ?>>Todos los vencimientos</option>
+                <option value="5" <?= $filtroActivo == 5 ? 'selected' : '' ?>>Próximos 5 días</option>
+                <option value="15" <?= $filtroActivo == 15 ? 'selected' : '' ?>>Próximos 15 días</option>
+                <option value="30" <?= $filtroActivo == 30 ? 'selected' : '' ?>>Próximos 30 días</option>
+                <option value="45" <?= $filtroActivo == 45 ? 'selected' : '' ?>>Próximos 45 días</option>
+                <option value="60" <?= $filtroActivo == 60 ? 'selected' : '' ?>>Próximos 60 días</option>
+            </select>
+        </div>
+        <div>
+            <a href="<?= base_url('jefe/exportarPdf?filtro_dias=' . $filtroActivo) ?>" class="btn btn-danger">
+                <i class="fas fa-file-pdf"></i> Exportar PDF
+            </a>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-bordered text-center">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Producto</th>
+                    <th>Pasillo</th>
+                    <th>Pasillero</th>
+                    <th>Fecha de vencimiento</th>
+                    <th>Registrado el</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($vencimientos as $v): ?>
+                <tr>
+                    <td><?= esc($v['producto']) ?></td>
+                    <td><?= esc($v['pasillo']) ?></td>
+                    <td><?= esc($v['pasillero']) ?></td>
+                    <td><?= date('d/m/Y', strtotime($v['fecha_vencimiento'])) ?></td>
+                    <td><?= date('d/m/Y H:i', strtotime($v['created_at'])) ?></td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
 </div>
 
-<!-- Tabla -->
-<table class="table table-bordered table-hover">
-    <thead class="table-dark">
-        <tr>
-            <th>Producto</th>
-            <th>Pasillo</th>
-            <th>Pasillero</th>
-            <th>Fecha de vencimiento</th>
-            <th>Registrado el</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php foreach ($vencimientos as $v): ?>
-            <tr>
-                <td><?= esc($v['producto']) ?></td>
-                <td><?= esc($v['pasillo']) ?></td>
-                <td><?= esc($v['pasillero']) ?></td>
-                <td><?= date('d/m/Y', strtotime($v['fecha_vencimiento'])) ?></td>
-                <td><?= date('d/m/Y H:i', strtotime($v['created_at'])) ?></td>
-            </tr>
-        <?php endforeach; ?>
-    </tbody>
-</table>
-
-<!-- Script para navegación dinámica + sincronizar input hidden del PDF -->
 <script>
-    const selectFiltro = document.getElementById('filtro_dias');
-    const inputHidden = document.getElementById('filtro_dias_hidden');
-
-    selectFiltro.addEventListener('change', function () {
+    document.getElementById('filtroDias').addEventListener('change', function () {
         const dias = this.value;
-        if (inputHidden) inputHidden.value = dias;
-        window.location.href = '<?= base_url('jefe/vencimientos-por-dias') ?>/' + dias;
+        window.location.href = "<?= base_url('jefe/vencimientos/') ?>" + dias;
     });
 </script>
 

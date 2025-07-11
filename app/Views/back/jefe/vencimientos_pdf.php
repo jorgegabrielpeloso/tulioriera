@@ -4,25 +4,37 @@
     <meta charset="UTF-8">
     <title>Reporte de Vencimientos</title>
     <style>
-        body { font-family: Arial, sans-serif; font-size: 14px; }
-        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
-        .logo { width: 150px; }
-        .fecha { text-align: right; }
-        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-        th, td { border: 1px solid #000; padding: 6px; text-align: left; }
-        th { background-color: #f2f2f2; }
-        h3 { margin-bottom: 10px; }
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: auto;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 6px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .resumen {
+            margin-top: 15px;
+            font-size: 13px;
+        }
     </style>
 </head>
 <body>
 
-
-    <div class="header">
-        <img src="<?= base_url('public/assets/img/logo_tulioriera.png') ?>" alt="Logo" class="logo">
-        <div class="fecha">Fecha: <?= date('d/m/Y') ?></div>
-    </div>
-
-    <h3>Listado de productos que vencen en los próximos <?= esc($dias) ?> días</h3>
+    <h2>Reporte de Vencimientos - Próximos <?= esc($dias) ?> días</h2>
+    <p class="resumen">Generado el: <?= esc($fecha) ?></p>
 
     <table>
         <thead>
