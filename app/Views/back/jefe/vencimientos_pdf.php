@@ -1,60 +1,45 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <title>Reporte de Vencimientos</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            font-size: 12px;
-        }
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: auto;
-        }
-        th, td {
-            border: 1px solid #000;
-            padding: 6px;
-            text-align: center;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        .resumen {
-            margin-top: 15px;
-            font-size: 13px;
-        }
+        body { font-family: Arial, sans-serif; }
+        h2 { text-align: center; margin-top: 10px; }
+        table { width: 100%; border-collapse: collapse; font-size: 12px; }
+        th, td { border: 1px solid #000; padding: 6px; text-align: center; }
+        th { background-color: #f2f2f2; }
+        img.logo { display: block; margin: 0 auto; width: 130px; height: auto; }
     </style>
 </head>
 <body>
 
-    <h2>Reporte de Vencimientos - Próximos <?= esc($dias) ?> días</h2>
-    <p class="resumen">Generado el: <?= esc($fecha) ?></p>
+    <img src="<?= FCPATH . 'public/assets/img/logo_tulioriera.png' ?>" class="logo" alt="Logo Tulio Riera">
+    <h2>Reporte de Productos por Vencimiento</h2>
 
     <table>
         <thead>
             <tr>
+                <th>Código Riera</th>
                 <th>Producto</th>
+                <th>Proveedor</th>
+                <th>Lote</th>
                 <th>Pasillo</th>
-                <th>Pasillero</th>
-                <th>Fecha de vencimiento</th>
+                <th>Fecha de Vencimiento</th>
                 <th>Registrado el</th>
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($vencimientos as $v): ?>
-                <tr>
-                    <td><?= esc($v['producto']) ?></td>
-                    <td><?= esc($v['pasillo']) ?></td>
-                    <td><?= esc($v['pasillero']) ?></td>
-                    <td><?= date('d/m/Y', strtotime($v['fecha_vencimiento'])) ?></td>
-                    <td><?= date('d/m/Y H:i', strtotime($v['created_at'])) ?></td>
-                </tr>
+            <?php foreach ($productos as $producto): ?>
+            <tr>
+                <td><?= esc($producto['codigo_riera']) ?></td>
+                <td><?= esc($producto['nombre']) ?></td>
+                <td><?= esc($producto['proveedor']) ?></td>
+                <td><?= esc($producto['lote']) ?></td>
+                <td><?= esc($producto['pasillo']) ?></td>
+                <td><?= date('d/m/Y', strtotime($producto['fecha_vencimiento'])) ?></td>
+                <td><?= date('d/m/Y H:i', strtotime($producto['created_at'])) ?></td>
+            </tr>
             <?php endforeach; ?>
         </tbody>
     </table>

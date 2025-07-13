@@ -49,6 +49,14 @@
           <span>Reporte de Vencimientos</span></a>
       </li>
 
+
+      <li class="nav-item">
+  <a class="nav-link" href="<?= base_url('jefe/productos-vencimiento') ?>">
+    <i class="fas fa-fw fa-plus-square"></i>
+    <span>Cargar Producto</span>
+  </a>
+</li>
+
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
 

@@ -16,95 +16,49 @@ class VencimientosController extends Controller
         $this->vencimientoModel = new VencimientoModel();
     }
 
-    public function guardar()
+    public function verParaJefe()
     {
-        if (session()->get('usuario_rol') !== 'pasillo') {
-            return redirect()->back()->with('mensaje', 'Solo los empleados de pasillo pueden registrar vencimientos.');
-        }
-
-        $usuarioId = session()->get('usuario_id');
-
-        if (!$usuarioId) {
-            return redirect()->back()->with('mensaje', 'Error: sesión expirada o usuario inválido.');
-        }
-
-        $usuarioModel = new \App\Models\UsuarioModel();
-        $usuario = $usuarioModel->find($usuarioId);
-
-        if (!$usuario || empty($usuario['pasillo'])) {
-            return redirect()->back()->with('mensaje', 'Error: el usuario no tiene un pasillo asignado.');
-        }
-
-        $datos = [
-            'producto' => $this->request->getPost('producto'),
-            'fecha_vencimiento' => $this->request->getPost('fecha_vencimiento'),
-            'pasillo' => $usuario['pasillo'],
-            'usuario_id' => $usuarioId
-        ];
-
-        $this->vencimientoModel->save($datos);
-
-        return redirect()->back()->with('mensaje', 'Vencimiento registrado correctamente.');
+        return $this->vencimientosPorDias(9999); // Todos por defecto
     }
 
-    // Este es el que se carga por defecto con todos
-public function verParaJefe()
-{
-    return $this->vencimientosPorDias(9999); // por defecto muestra todos
-}
-
-// Este responde al filtro con cantidad de días
-public function vencimientosPorDias($dias)
-{
-    $fechaLimite = date('Y-m-d', strtotime("+$dias days"));
-
-    $db = \Config\Database::connect();
-    $builder = $db->table('vencimientos v');
-    $builder->select('v.fecha_vencimiento, v.created_at, p.pasillo, u.nombre AS pasillero, p.nombre AS producto');
-    $builder->join('usuarios u', 'u.id = v.usuario_id');
-    $builder->join('productos_deposito p', 'p.id = v.producto_id');
-    $builder->where('v.fecha_vencimiento <=', $fechaLimite);
-    $builder->orderBy('v.fecha_vencimiento', 'ASC');
-
-    $vencimientos = $builder->get()->getResultArray();
-
-    return view('back/jefe/vencimientos_jefe', [
-        'vencimientos' => $vencimientos,
-        'filtroActivo' => $dias
-    ]);
-}
-
-
-
-
-    public function exportarPdf()
+    public function vencimientosPorDias($dias = 9999)
     {
-        $dias = $this->request->getGet('filtro_dias');
-        $fechaActual = date('d/m/Y');
+        $filtroDias = $this->request->getGet('filtro_dias');
+        if ($filtroDias !== null) {
+            $dias = (int)$filtroDias;
+        }
+
+        $fechaLimite = date('Y-m-d', strtotime("+$dias days"));
 
         $db = \Config\Database::connect();
         $builder = $db->table('vencimientos v');
-        $builder->select('v.fecha_vencimiento, v.created_at, p.pasillo, u.nombre AS pasillero, p.nombre AS producto');
-        $builder->join('usuarios u', 'u.id = v.usuario_id');
+        $builder->select('v.fecha_vencimiento, v.created_at, p.codigo_riera, p.nombre AS producto, p.proveedor, p.lote, p.pasillo');
         $builder->join('productos_deposito p', 'p.id = v.producto_id');
-        $builder->where('v.fecha_vencimiento <=', date('Y-m-d', strtotime("+$dias days")));
+        $builder->where('v.fecha_vencimiento <=', $fechaLimite);
         $builder->orderBy('v.fecha_vencimiento', 'ASC');
 
         $vencimientos = $builder->get()->getResultArray();
 
-        $html = view('back/jefe/vencimientos_pdf', [
+        return view('back/jefe/vencimientos_jefe', [
             'vencimientos' => $vencimientos,
-            'dias' => $dias,
-            'fecha' => $fechaActual
+            'filtroActivo' => $dias
         ]);
-
-        $options = new Options();
-        $options->set('isRemoteEnabled', true);
-
-        $dompdf = new Dompdf($options);
-        $dompdf->loadHtml($html);
-        $dompdf->setPaper('A4', 'landscape');
-        $dompdf->render();
-        $dompdf->stream("vencimientos_{$dias}_dias.pdf", ["Attachment" => false]); // abrir en navegador
     }
+
+    public function exportarPdf()
+{
+    helper('filesystem');
+
+    $filtro_dias = $this->request->getGet('filtro_dias');
+    $model = new VencimientoModel();
+
+    $productos = $model->obtenerParaJefe($filtro_dias); // esta función ya está definida
+
+    $dompdf = new \Dompdf\Dompdf();
+    $dompdf->loadHtml(view('back/jefe/vencimientos_pdf', ['productos' => $productos]));
+    $dompdf->setPaper('A4', 'landscape');
+    $dompdf->render();
+    $dompdf->stream('reporte_vencimientos.pdf', ['Attachment' => false]);
+}
+
 }

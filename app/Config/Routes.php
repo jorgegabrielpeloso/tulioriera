@@ -76,3 +76,10 @@ $routes->get('jefe/exportar-pdf', 'VencimientosController::exportarPdf');
 $routes->get('jefe/vencimientos-por-dias/(:num)', 'VencimientosController::vencimientosPorDias/$1');
 $routes->get('jefe/vencimientos/(:num)', 'VencimientosController::vencimientosPorDias/$1');
 $routes->get('jefe/exportarPdf', 'VencimientosController::exportarPdf');
+$routes->get('jefe/productos-vencimiento', 'JefeDepositoController::formProductoConVencimiento');
+$routes->post('jefe/guardarProductoConVencimiento', 'JefeDepositoController::guardarProductoConVencimiento');
+$routes->get('jefe/vencimientos', 'VencimientosController::verParaJefe');
+$routes->get('vencimientos/exportarPdf', 'VencimientosController::exportarPdf');
+$routes->get('jefe/dashboard', 'JefeDepositoController::dashboard');
+$routes->post('jefe/guardar-producto', 'JefeDepositoController::guardarProducto');
+
