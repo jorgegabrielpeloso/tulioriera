@@ -9,6 +9,28 @@
   <!-- CSS SB Admin 2 -->
   <link href="<?= base_url('public/assets/sbadmin2/vendor/fontawesome-free/css/all.min.css') ?>" rel="stylesheet" type="text/css">
   <link href="<?= base_url('public/assets/sbadmin2/css/sb-admin-2.min.css') ?>" rel="stylesheet">
+
+  <style>
+    /* Estilo para cerrar el cuadro de alerta */
+    .alertas-recientes {
+      position: relative;
+    }
+
+    .btn-cerrar-alerta {
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      background: none;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+      color: #888;
+    }
+
+    .btn-cerrar-alerta:hover {
+      color: #000;
+    }
+  </style>
 </head>
 
 <body id="page-top">
@@ -49,13 +71,12 @@
           <span>Reporte de Vencimientos</span></a>
       </li>
 
-
       <li class="nav-item">
-  <a class="nav-link" href="<?= base_url('jefe/productos-vencimiento') ?>">
-    <i class="fas fa-fw fa-plus-square"></i>
-    <span>Cargar Producto</span>
-  </a>
-</li>
+        <a class="nav-link" href="<?= base_url('jefe/productos-vencimiento') ?>">
+          <i class="fas fa-fw fa-plus-square"></i>
+          <span>Cargar Producto</span>
+        </a>
+      </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
@@ -64,7 +85,6 @@
       <div class="text-center d-none d-md-inline mb-4">
         <a href="<?= base_url('logout') ?>" class="btn btn-success text-white">Cerrar sesión</a>
       </div>
-
     </ul>
     <!-- End of Sidebar -->
 
@@ -90,46 +110,43 @@
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
 
+            <?php
+              $notificacionModel = new \App\Models\NotificacionModel();
+              $notificaciones = $notificacionModel->obtenerNoLeidas();
+              $totalNoLeidas = count($notificaciones);
+            ?>
+
             <!-- Notificaciones -->
             <li class="nav-item dropdown no-arrow mx-1">
               <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown">
                 <i class="fas fa-bell fa-fw"></i>
-                <span class="badge badge-danger badge-counter">3+</span>
+                <?php if ($totalNoLeidas > 0): ?>
+                  <span class="badge badge-danger badge-counter"><?= $totalNoLeidas ?></span>
+                <?php endif; ?>
               </a>
               <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
                 <h6 class="dropdown-header">Centro de Alertas</h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-primary">
-                      <i class="fas fa-file-alt text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">Julio 11, 2025</div>
-                    ¡Se ha generado un nuevo reporte!
-                  </div>
-                </a>
-              </div>
-            </li>
 
-            <!-- Mensajes -->
-            <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown">
-                <i class="fas fa-envelope fa-fw"></i>
-                <span class="badge badge-danger badge-counter">7</span>
-              </a>
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
-                <h6 class="dropdown-header">Centro de Mensajes</h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://via.placeholder.com/60" alt="">
-                    <div class="status-indicator bg-success"></div>
+                <?php if (empty($notificaciones)): ?>
+                  <span class="dropdown-item text-center small text-gray-500">Sin nuevas alertas</span>
+                <?php else: ?>
+                  <?php foreach ($notificaciones as $n): ?>
+                    <a class="dropdown-item d-flex align-items-center" href="#">
+                      <div class="mr-3">
+                        <div class="icon-circle bg-primary">
+                          <i class="fas fa-exclamation text-white"></i>
+                        </div>
+                      </div>
+                      <div>
+                        <div class="small text-gray-500"><?= date('d/m/Y H:i', strtotime($n['created_at'])) ?></div>
+                        <?= esc($n['mensaje']) ?>
+                      </div>
+                    </a>
+                  <?php endforeach; ?>
+                  <div class="dropdown-item text-center">
+                    <a href="<?= base_url('jefe/notificaciones-leidas') ?>" class="btn btn-sm btn-outline-secondary">Marcar como leídas</a>
                   </div>
-                  <div class="font-weight-bold">
-                    <div class="text-truncate">Hola jefe, revise el nuevo lote cargado.</div>
-                    <div class="small text-gray-500">Pasillero · Hace 2 horas</div>
-                  </div>
-                </a>
+                <?php endif; ?>
               </div>
             </li>
 
@@ -155,11 +172,43 @@
     </div>
   </div>
 
-  <!-- Scripts -->
-  <script src="<?= base_url('public/assets/sbadmin2/vendor/jquery/jquery.min.js') ?>"></script>
-  <script src="<?= base_url('public/assets/sbadmin2/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
-  <script src="<?= base_url('public/assets/sbadmin2/vendor/jquery-easing/jquery.easing.min.js') ?>"></script>
-  <script src="<?= base_url('public/assets/sbadmin2/js/sb-admin-2.min.js') ?>"></script>
+<!-- Scripts -->
+<script src="<?= base_url('public/assets/sbadmin2/vendor/jquery/jquery.min.js') ?>"></script>
+<script src="<?= base_url('public/assets/sbadmin2/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
+<script src="<?= base_url('public/assets/sbadmin2/vendor/jquery-easing/jquery.easing.min.js') ?>"></script>
+<script src="<?= base_url('public/assets/sbadmin2/js/sb-admin-2.min.js') ?>"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- JS para cerrar alerta manual y automáticamente -->
+<script>
+  // Cerrar al hacer clic en la X
+  $(document).on('click', '.btn-cerrar-alerta', function () {
+    $('.alertas-recientes').fadeOut();
+
+    // Lógica opcional: también marcarlas como leídas si querés
+    fetch("<?= base_url('jefe/notificaciones-leidas') ?>")
+      .then(response => {
+        if (!response.ok) {
+          console.error('Error al marcar como leídas');
+        }
+      });
+  });
+
+  // Cerrar automáticamente después de 8 segundos
+  $(document).ready(function () {
+    setTimeout(function () {
+      $('.alertas-recientes').fadeOut();
+
+      // Lógica opcional: también marcarlas como leídas si se cierran solas
+      fetch("<?= base_url('jefe/notificaciones-leidas') ?>")
+        .then(response => {
+          if (!response.ok) {
+            console.error('Error al marcar como leídas automáticamente');
+          }
+        });
+    }, 8000);
+  });
+</script>
 
 </body>
 </html>

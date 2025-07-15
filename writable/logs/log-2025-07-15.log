@@ -1,0 +1,126 @@
+DEBUG - 2025-07-15 14:51:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 14:51:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 14:51:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 14:51:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 15:06:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 15:06:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 15:06:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 15:06:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 15:06:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 15:07:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 16:27:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 16:27:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 16:27:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 16:39:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 16:39:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 16:39:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 16:40:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 16:41:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 16:41:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 17:06:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-07-15 17:06:06 --> mysqli_sql_exception: Unknown column 'updated_at' in 'field list' in C:\xampp\htdocs\tulioriera\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\tulioriera\system\Database\MySQLi\Connection.php(327): mysqli->query('UPDATE `notific...', 0)
+#1 C:\xampp\htdocs\tulioriera\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `notific...')
+#2 C:\xampp\htdocs\tulioriera\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `notific...')
+#3 C:\xampp\htdocs\tulioriera\system\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `notific...', Array, false)
+#4 C:\xampp\htdocs\tulioriera\system\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp\htdocs\tulioriera\system\BaseModel.php(1031): CodeIgniter\Model->doUpdate(NULL, Array)
+#6 C:\xampp\htdocs\tulioriera\system\Model.php(863): CodeIgniter\BaseModel->update(NULL, Array)
+#7 C:\xampp\htdocs\tulioriera\app\Controllers\JefeDepositoController.php(62): CodeIgniter\Model->update()
+#8 C:\xampp\htdocs\tulioriera\system\CodeIgniter.php(933): App\Controllers\JefeDepositoController->marcarNotificacionesLeidas()
+#9 C:\xampp\htdocs\tulioriera\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\JefeDepositoController))
+#10 C:\xampp\htdocs\tulioriera\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\tulioriera\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\tulioriera\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\tulioriera\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-07-15 17:06:07 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'updated_at' in 'field list'
+[Method: GET, Route: jefe/notificaciones-leidas]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `notificaciones` SET `leido` = :leido.1:, `updated_at` = :updated_at:
+WHERE `leido` = :leido:', [...], false)
+ 2 SYSTEMPATH\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 3 SYSTEMPATH\BaseModel.php(1031): CodeIgniter\Model->doUpdate(null, [...])
+ 4 SYSTEMPATH\Model.php(863): CodeIgniter\BaseModel->update(null, [...])
+ 5 APPPATH\Controllers\JefeDepositoController.php(62): CodeIgniter\Model->update()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\JefeDepositoController->marcarNotificacionesLeidas()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\JefeDepositoController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-15 17:06:07 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'updated_at' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `notificaciones` SET `leido` = \'SI\', `updated_at` = \'2025-07-15 17:06:06\'
+WHERE `leido` = \'NO\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `notificaciones` SET `leido` = \'SI\', `updated_at` = \'2025-07-15 17:06:06\'
+WHERE `leido` = \'NO\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `notificaciones` SET `leido` = :leido.1:, `updated_at` = :updated_at:
+WHERE `leido` = :leido:', [...], false)
+ 4 SYSTEMPATH\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 5 SYSTEMPATH\BaseModel.php(1031): CodeIgniter\Model->doUpdate(null, [...])
+ 6 SYSTEMPATH\Model.php(863): CodeIgniter\BaseModel->update(null, [...])
+ 7 APPPATH\Controllers\JefeDepositoController.php(62): CodeIgniter\Model->update()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\JefeDepositoController->marcarNotificacionesLeidas()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\JefeDepositoController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-15 17:06:07 --> [Caused by] mysqli_sql_exception: Unknown column 'updated_at' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('UPDATE `notificaciones` SET `leido` = \'SI\', `updated_at` = \'2025-07-15 17:06:06\'
+WHERE `leido` = \'NO\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `notificaciones` SET `leido` = \'SI\', `updated_at` = \'2025-07-15 17:06:06\'
+WHERE `leido` = \'NO\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `notificaciones` SET `leido` = \'SI\', `updated_at` = \'2025-07-15 17:06:06\'
+WHERE `leido` = \'NO\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `notificaciones` SET `leido` = :leido.1:, `updated_at` = :updated_at:
+WHERE `leido` = :leido:', [...], false)
+ 5 SYSTEMPATH\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH\BaseModel.php(1031): CodeIgniter\Model->doUpdate(null, [...])
+ 7 SYSTEMPATH\Model.php(863): CodeIgniter\BaseModel->update(null, [...])
+ 8 APPPATH\Controllers\JefeDepositoController.php(62): CodeIgniter\Model->update()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\JefeDepositoController->marcarNotificacionesLeidas()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\JefeDepositoController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-07-15 17:14:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 17:14:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 17:14:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 17:14:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 17:15:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 17:17:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 17:17:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 17:18:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 17:18:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 17:18:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 17:22:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 17:23:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 17:25:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 17:25:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 17:25:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 17:26:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 17:26:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 17:27:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 17:27:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 17:27:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 17:28:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 17:28:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 17:28:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 17:29:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 17:29:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 17:29:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 17:29:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 17:30:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 17:30:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 17:30:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 17:32:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 17:32:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 17:34:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 17:34:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 17:34:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-15 17:34:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

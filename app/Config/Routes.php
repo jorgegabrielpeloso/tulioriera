@@ -6,17 +6,17 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 
-// Página de inicio
+// 🌐 Página de inicio
 $routes->get('/', 'Home::index');
 $routes->get('/inicio', 'Home::index');
 
-// Productos públicos
+// 🛒 Productos públicos
 $routes->get('productos', 'ProductosPublicosController::index');
 $routes->get('productos/(:segment)', 'ProductosPublicosController::index/$1');
 $routes->get('productos/buscar/ajax', 'ProductosPublicosController::buscarAjax');
 $routes->get('ofertas', 'ProductosPublicosController::ofertas');
 
-// Chatbot
+// 🤖 Chatbot
 $routes->post('chatbot/responder', 'ChatbotController::responder');
 
 // 🔐 Autenticación
@@ -43,43 +43,20 @@ $routes->get('usuarios/eliminar/(:num)', 'UsuariosController::eliminar/$1');
 // 📂 Panel Jefe de Depósito
 $routes->get('jefe/dashboard', 'JefeDepositoController::dashboard');
 $routes->get('jefe/vencimientos', 'VencimientosController::verParaJefe');
+$routes->get('jefe/vencimientos-por-dias/(:num)', 'VencimientosController::vencimientosPorDias/$1');
+$routes->get('jefe/vencimientos/pdf/(:num)', 'JefeDepositoController::generarPDF/$1');
+$routes->get('jefe/exportar-pdf', 'VencimientosController::exportarPdf');
+$routes->get('jefe/productos-vencimiento', 'JefeDepositoController::formProductoConVencimiento');
+$routes->post('jefe/guardarProducto', 'JefeDepositoController::guardarProducto');
+$routes->post('jefe/guardarProductoConVencimiento', 'JefeDepositoController::guardarProductoConVencimiento');
+$routes->get('jefe/generar-reporte', 'JefeDepositoController::generarReporte');
+$routes->get('jefe/descargar-reporte', 'JefeDepositoController::descargarUltimoReporte');
+$routes->get('jefe/reportes-generados', 'JefeDepositoController::reportesGenerados');
+$routes->get('jefe/descargar-reporte/(:any)', 'JefeDepositoController::descargarReporte/$1');
+$routes->get('jefe/enviar-email/(:any)', 'JefeDepositoController::enviarEmail/$1');
+$routes->get('jefe/notificaciones-leidas', 'JefeDepositoController::marcarNotificacionesLeidas');
+
 
 // 🧾 Panel Pasillo
 $routes->get('pasillo/dashboard', 'PasilloController::dashboard');
-$routes->post('vencimientos/guardar', 'VencimientosController::guardar');
-
-$routes->get('login', 'AuthController::login');
-$routes->post('procesar-login', 'AuthController::procesarLogin');
-
-
-$routes->get('/login', 'AuthController::login');
-$routes->post('/procesar-login', 'AuthController::procesarLogin');
-$routes->get('/logout', 'AuthController::logout');
-
-
-$routes->post('vencimientos/guardar', 'PasilloController::guardarVencimiento');
-
-$routes->get('jefe/vencimientos', 'JefeDepositoController::vencimientos');
-$routes->post('jefe/guardarProducto', 'JefeDepositoController::guardarProducto');
-
-
 $routes->post('pasillo/guardar-vencimiento', 'PasilloController::guardarVencimiento');
-
-
-$routes->get('jefe/vencimientos', 'JefeDepositoController::vencimientos');
-$routes->get('jefe/vencimientos/filtro/(:num)', 'JefeDepositoController::vencimientosPorDias/$1');
-$routes->get('jefe/vencimientos/pdf/(:num)', 'JefeDepositoController::generarPDF/$1');
-
-$routes->get('jefe/exportar-pdf', 'VencimientosController::exportarPdf');
-
-$routes->get('jefe/exportar-pdf', 'VencimientosController::exportarPdf');
-$routes->get('jefe/vencimientos-por-dias/(:num)', 'VencimientosController::vencimientosPorDias/$1');
-$routes->get('jefe/vencimientos/(:num)', 'VencimientosController::vencimientosPorDias/$1');
-$routes->get('jefe/exportarPdf', 'VencimientosController::exportarPdf');
-$routes->get('jefe/productos-vencimiento', 'JefeDepositoController::formProductoConVencimiento');
-$routes->post('jefe/guardarProductoConVencimiento', 'JefeDepositoController::guardarProductoConVencimiento');
-$routes->get('jefe/vencimientos', 'VencimientosController::verParaJefe');
-$routes->get('vencimientos/exportarPdf', 'VencimientosController::exportarPdf');
-$routes->get('jefe/dashboard', 'JefeDepositoController::dashboard');
-$routes->post('jefe/guardar-producto', 'JefeDepositoController::guardarProducto');
-
